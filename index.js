@@ -40,10 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi){
+  return dizi;
 }
-
+console.log(kopyala(orijinalTatlar));
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -56,9 +56,15 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(array){
+  let uzunluğu = array.length;
+  if (uzunluğu === 25){
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +80,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(tatlar, string) {
+  tatlar.unshift(string);
+  return tatlar
 }
+console.log(cesitEkle(orijinalTatlar, "Kakule"));
+
 
 
 /* Cörev 4:
@@ -92,10 +101,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(gorev5){
+  let yeniTat = gorev5.pop();
+  return gorev5
 }
-
+console.log(sonCesitiKaldir(orijinalTatlar));
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,10 +118,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar, sayi){
+  let visne = tatlar[sayi];
+  return visne
+  
 }
-
+console.log(indekstekiCesitiGetir(orijinalTatlar, 2));
 
 /* Görev 6:
 
@@ -128,9 +140,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzet){
+  let Tarcin = tatlar.indexOf(lezzet)
+  let sonTat = tatlar.splice(Tarcin,1)
+  return tatlar
 }
+console.log(ismeGoreCesitCikar(orijinalTatlar, "Tarçın"));
 
 
 /* Görev 7:
@@ -154,10 +169,17 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, filtre){
+  let filtreliTatlar = [];
+  for (let i = 0; i < tatlar.length; i++) {
+    if (tatlar[i].includes(filtre)){
+      filtreliTatlar.push(tatlar[i]);
+    }
+  }
+  return filtreliTatlar;
+  
 }
-
+console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
 
 
 /* ALIŞTIRMA */
@@ -172,7 +194,7 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
+function ortalamaKelimeSayisi(){
   /*kod buraya*/
 }
 
